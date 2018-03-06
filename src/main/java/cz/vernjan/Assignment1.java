@@ -6,9 +6,14 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
+ * The goal is to decrypt secret messages which were encrypted using the same one-time pad.
+ *
  * Hint: XOR the cipher texts together, and consider what happens when a space is XORed with a character in [a-zA-Z].
+ *
+ * @see <a href="https://en.wikipedia.org/wiki/One-time_pad">
+ * One-time pad</a>
  */
-public class Crypto1 {
+public class Assignment1 {
 
     // all ciphered texts trimmed to the same length
     private static final String CT_01 = "315c4eeaa8b5f8aaf9174145bf43e1784b8fa00dc71d885a804e5ee9fa40b16349c146fb778cdf2d3aff021dfff5b403b510d0d0455468aeb98622b137dae857553ccd8883a7bc37520e06e515d22c954eba50";
