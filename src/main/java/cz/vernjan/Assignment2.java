@@ -24,16 +24,16 @@ public class Assignment2 {
         assert (cipherTextHex.length() % 32 == 0) : "Cipher text is not divisible by 16";
         assert (keyHex.length() % 32 == 0) : "Key is not divisible by 16";
 
-        final byte[] key = Utils.hex2ByteArray(keyHex);
+        final byte[] key = Utils.hex2Bytes(keyHex);
 
         StringBuilder plainText = new StringBuilder();
 
         for (int i = 0; i <= cipherTextHex.length() - 64; i += 32) {
 
             // use the current block as IV
-            byte[] iv = Utils.hex2ByteArray(cipherTextHex.substring(i, i + 32));
+            byte[] iv = Utils.hex2Bytes(cipherTextHex.substring(i, i + 32));
             // take the next block as cipher text
-            byte[] block = Utils.hex2ByteArray(cipherTextHex.substring(i + 32, i + 64));
+            byte[] block = Utils.hex2Bytes(cipherTextHex.substring(i + 32, i + 64));
 
             // CBC: decrypt block using key and then xor with IV
             byte[] decrypted = Utils.xor(decryptBlock(block, key), iv);
@@ -74,7 +74,7 @@ public class Assignment2 {
 
         return decryptCtr(
                 cipherTextHex.substring(32),
-                Utils.hex2ByteArray(keyHex),
+                Utils.hex2Bytes(keyHex),
                 cipherTextHex.substring(0, 32));
     }
 
@@ -85,10 +85,10 @@ public class Assignment2 {
         String ivForThisBlockHex = ivHex;
 
         for (int i = 0; i <= cipherTextHex.length(); i += 32) {
-            byte[] ivForThisBlock = Utils.hex2ByteArray(ivForThisBlockHex);
+            byte[] ivForThisBlock = Utils.hex2Bytes(ivForThisBlockHex);
 
             String blockHex = cipherTextHex.substring(i, Math.min(cipherTextHex.length(), i + 32));
-            byte[] block = Utils.hex2ByteArray(blockHex);
+            byte[] block = Utils.hex2Bytes(blockHex);
 
             // CTR: encrypt(!) IV using key and then xor with block
             byte[] decrypted = Utils.xor(encryptBlock(key, ivForThisBlock), block);

@@ -1,20 +1,19 @@
 package cz.vernjan;
 
+import com.google.common.io.BaseEncoding;
+
 /**
  * Created by VERNER Jan on 3.3.18.
  */
 // TODO test
 public class Utils {
 
-    // TODO use for Assignment1
-    public static byte[] hex2ByteArray(String hex) {
-        int len = hex.length();
-        byte[] bytes = new byte[len / 2];
-        for (int i = 0; i < len; i += 2) {
-            bytes[i / 2] = (byte)
-                    ((Character.digit(hex.charAt(i), 16) << 4) + Character.digit(hex.charAt(i + 1), 16));
-        }
-        return bytes;
+    public static byte[] hex2Bytes(String hex) {
+        return BaseEncoding.base16().lowerCase().decode(hex);
+    }
+
+    public static String bytesToHex(byte[] bytes) {
+        return BaseEncoding.base16().lowerCase().encode(bytes);
     }
 
     public static byte[] xor(byte[] a, byte[] b) {
