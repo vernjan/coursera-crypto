@@ -26,3 +26,7 @@ hs_err_pid*
 /.gradle/
 /.idea/
 /out/
+
+# custom
+6.1.intro.mp4_download
+6.2.birthday.mp4_download
