@@ -12,8 +12,16 @@ public class Utils {
         return BaseEncoding.base16().lowerCase().decode(hex);
     }
 
+    public static byte hex2Byte(String hexByte) {
+        return BaseEncoding.base16().lowerCase().decode(hexByte)[0];
+    }
+
     public static String bytesToHex(byte[] bytes) {
         return BaseEncoding.base16().lowerCase().encode(bytes);
+    }
+
+    public static String byteToHex(byte b) {
+        return BaseEncoding.base16().lowerCase().encode(new byte[]{b});
     }
 
     public static byte[] xor(byte[] a, byte[] b) {
