@@ -7,3 +7,4 @@ Solutions for optional programming assignments. Written in Java.
 - [Week 2](https://github.com/vernjan/coursera-crypto/blob/master/src/main/java/cz/vernjan/Assignment2.java)
 - [Week 3](https://github.com/vernjan/coursera-crypto/blob/master/src/main/java/cz/vernjan/Assignment3.java)
 - [Week 4](https://github.com/vernjan/coursera-crypto/blob/master/src/main/java/cz/vernjan/Assignment4.java)
+- [Week 5](https://github.com/vernjan/coursera-crypto/blob/master/src/main/java/cz/vernjan/Assignment5.java)
